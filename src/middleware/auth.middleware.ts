@@ -14,7 +14,7 @@ export const AuthMiddleware = async (req: {
             res.status(404).send({ message: "Unauthenticated" });
         }
         const repository = getManager().getRepository(User);
-        const { password, ...user } = await repository.findOne({ where: { id: payload.id } });
+        const { password, ...user } = await repository.findOne({ where: { id: payload.id }, relations: ['role', 'role.permissions'] });
         req["user"] = user;
         next();
     } catch (error) {

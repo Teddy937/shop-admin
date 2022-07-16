@@ -18,4 +18,5 @@
 * bcryptjs 
 * jsonwebtoken
 * cookie-parser
-* multer
+* multer (file uploads)
+* json2csv

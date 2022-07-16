@@ -19,7 +19,7 @@ createConnection().then(connection => {
         credentials: true, // allows frontend to get cookie
         origin: ["http://localhost:3000"]
     }))
-
+    app.use('/api/uploads', express.static('uploads'))
     app.use("/api", routes);
 
     app.listen(8000, () => {
